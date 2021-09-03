@@ -1,0 +1,20 @@
+.main_title {
+    color: var(--main-color);
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    text-shadow: 0px 2px 4px rgba(100, 100, 100, 0.5);
+}
+
+.round_img {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    box-shadow: 0px 2px 4px rgba(100, 100, 100, 0.5);
+    margin: 20px;
+}
+
+.center {
+    text-align: center;
+}

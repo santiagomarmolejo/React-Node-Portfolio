@@ -1,0 +1,35 @@
+header {
+    background: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 4px 15px rgba(46, 46, 46, 0.83);
+}
+
+header>h2 {
+    font-weight: 600;
+    color: white;
+}
+
+header>h2 {
+    font-weight: 600;
+    color: white;
+}
+
+nav {
+    display: inline;
+}
+
+.nav_item {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.15s;
+}
+
+.nav_item:hover {
+    color: #ff620e;
+}
