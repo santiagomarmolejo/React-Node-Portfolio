@@ -33,3 +33,7 @@ nav {
 .nav_item:hover {
     color: #ff620e;
 }
+
+.active {
+    color: #ff620e;
+}

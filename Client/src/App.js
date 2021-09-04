@@ -1,5 +1,6 @@
 import "./App.css";
 import Index from './Pages/index.js';
+import Insertar from './Pages/Insertar';
 
 import {
     BrowserRouter as Router,
@@ -15,8 +16,8 @@ function App() {
                     <Route path = "/" exact>
                         <Index />
                     </Route>
-                    <Route path = "/hola" exact>
-                        <h1>Hola</h1>
+                    <Route path = "/insert" exact>
+                        <Insertar />
                     </Route>
                 </Switch>
             </div>
