@@ -2,6 +2,12 @@ const express = require('express');
 const post = require('./models/post');
 const app = express();
 
+//CORS
+
+const cors = require('cors');
+
+app.use(cors());
+
 
 //Conexión a base de datos
 
@@ -19,16 +25,18 @@ mongoose.connect(url, {
     .then(() => console.log('Base de datos conectada'))
     .catch(e => console.log(e));
 
-app.get('/', async (req, res) => {
+app.get('/getpost', async (req, res) => {
+
+    let arrayPosts;
 
     try {
-        let arrayPosts = await post.find();
+        arrayPosts = await post.find();
         console.log(arrayPosts);
     } catch (error) {
         console.log(error);
     }
 
-    res.send('Hola');
+    res.send(arrayPosts);
 })
 
 app.listen(3001, () => {
