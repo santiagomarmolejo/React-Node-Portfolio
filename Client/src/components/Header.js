@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './Header.module.css'
+import { NavLink } from 'react-router-dom'
+
 
 const Header = (props) => {
     return (<div>
@@ -7,9 +9,10 @@ const Header = (props) => {
             <h2>Santiago Marmolejo</h2>
             <nav>
                 <ul>
-                    <a className= {style.nav_item} >Home</a>
-                    <a className= {style.nav_item} >Photos</a>
-                    <a className= {style.nav_item} >Contact</a>
+                    <NavLink to="/" className={style.nav_item} activeClassName= { style.active } exact>Home</NavLink>
+                    <NavLink to="/photos" className={style.nav_item} activeClassName= { style.active } exact>Photos</NavLink>
+                    <NavLink to="/contact" className={style.nav_item} activeClassName= { style.active } exact>Contact</NavLink>
+                    <NavLink to="/insert" className={style.nav_item} activeClassName= { style.active } exact>Insertar</NavLink>
                 </ul>
             </nav>
         </header>

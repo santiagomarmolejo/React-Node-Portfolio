@@ -1,19 +1,27 @@
 import "./App.css";
-import Header from "./components/Header.js"
-import BigImage from "./components/BigImage";
-import AboutMe from "./components/AboutMe";
-import MyWork from "./components/MyWork";
-import Footer from "./components/Footer";
+import Index from './Pages/index.js';
+import Insertar from './Pages/Insertar';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+  } from "react-router-dom";
 
 function App() {
     return (
-        <div>
-            <Header/>
-            <BigImage/>
-            <AboutMe/>
-            <MyWork/>
-            <Footer/>
-        </div>
+        <Router>
+            <div className = "container">
+                <Switch>
+                    <Route path = "/" exact>
+                        <Index />
+                    </Route>
+                    <Route path = "/insert" exact>
+                        <Insertar />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     );
 }
 
