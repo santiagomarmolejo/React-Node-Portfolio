@@ -1,5 +1,5 @@
 const express = require('express');
-
+const post = require('./models/post');
 const app = express();
 
 
@@ -19,7 +19,15 @@ mongoose.connect(url, {
     .then(() => console.log('Base de datos conectada'))
     .catch(e => console.log(e));
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+
+    try {
+        let arrayPosts = await post.find();
+        console.log(arrayPosts);
+    } catch (error) {
+        console.log(error);
+    }
+
     res.send('Hola');
 })
 
