@@ -2,15 +2,7 @@ import React from "react";
 import ImageCard from "./ImageCard";
 import style from './MyWork.module.css';
 
-const fetchData = () => {
-    fetch('http://localhost:3001/getpost')
-        .then( data => data.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
-}
-
 const MyWork = () => {
-    fetchData();
 
     return (<div>
         <h1 className={style.main_title}>Mi trabajo</h1>
