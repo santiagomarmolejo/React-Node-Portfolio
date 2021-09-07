@@ -1,6 +1,8 @@
-import react, { useState, useEffect } from 'react';
+import react, { useState, useEffect, Fragment } from 'react';
+import style from "./photos.module.css";
 import ImageCard from '../components/ImageCard';
 import Header from '../components/Header';
+import Footer from '../components/Footer'
 
 const Photos = (props) => {
 
@@ -10,7 +12,7 @@ const Photos = (props) => {
         fetchData();
     }, [])
 
-    const fetchData = async () =>  {
+    const fetchData = async () => {
         const data = await fetch('http://localhost:3001/getpost')
         const photos = await data.json();
 
@@ -18,14 +20,26 @@ const Photos = (props) => {
     }
 
 
-    return (<div>
-        <Header />
-        {photos.map(item => {
-            
-            console.log(item.url);
+    const generateData = () => {
+        return (<Fragment>
+            <div className = {style.flex_img}>
+                {photos.map(item => {
+                    console.log(item.url)
+                    return <ImageCard key={item._id} img={item.url} />
+                })}
+            </div>
 
-            <ImageCard url = {item.url}/>
-        })}
+        </Fragment>);
+    }
+
+
+    return (<div>
+        
+        <Header />
+        <h1 className ={style.titulo}> Mis fotos</h1>
+        {generateData()}
+        <Footer />
+
     </div>);
 }
 
