@@ -40,14 +40,20 @@ app.get('/getpost', async (req, res) => {
 })
 
 app.post('/insert' , async (req, res) => {
-    await post.create({
+    /* await post.create({
         url : 'a',
         iso : '2',
         f : '3',
         shutter_speed : '3',
         img_name : 'a'
+        
     });
-    res.send('hola');
+
+    req.accepts('json','text')
+    req.read */
+
+    console.log(req.body);
+    res.send(req.body);
 })
 
 app.listen(3001, () => {
