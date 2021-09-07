@@ -39,6 +39,17 @@ app.get('/getpost', async (req, res) => {
     res.send(arrayPosts);
 })
 
+app.post('/insert' , async (req, res) => {
+    await post.create({
+        url : 'a',
+        iso : '2',
+        f : '3',
+        shutter_speed : '3',
+        img_name : 'a'
+    });
+    res.send('hola');
+})
+
 app.listen(3001, () => {
     console.log('running');
 })
