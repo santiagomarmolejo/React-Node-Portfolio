@@ -12,15 +12,22 @@ const Form = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const submit = {url, iso,f,shutter_speed,img_name }
+        const submit = {
+            url,
+            iso,
+            f,
+            shutter_speed,
+            img_name
+        }
 
         console.log(submit);
 
-        fetch('http://localhost/3001/insert', {
+        fetch('http://localhost:3001/insert', {
             method: 'POST',
             headers: { 'Content-Type': "aplication/json" },
-            body : JSON.stringify(submit)
+            body: JSON.stringify(submit)
         }).then(() => console.log('enviado'))
+            .catch((error) => console.log(`Something is wrong: ${error}`))
 
     }
 

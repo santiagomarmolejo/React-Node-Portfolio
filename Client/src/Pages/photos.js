@@ -1,4 +1,4 @@
-import react, { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import style from "./photos.module.css";
 import ImageCard from '../components/ImageCard';
 import Header from '../components/Header';

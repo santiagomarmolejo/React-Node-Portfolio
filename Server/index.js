@@ -2,12 +2,15 @@ const express = require('express');
 const post = require('./models/post');
 const app = express();
 
+//BodyParser
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
+
 //CORS
-
 const cors = require('cors');
-
 app.use(cors());
-
 
 //Conexión a base de datos
 
@@ -25,6 +28,8 @@ mongoose.connect(url, {
     .then(() => console.log('Base de datos conectada'))
     .catch(e => console.log(e));
 
+
+//Ruta que retorna los posts
 app.get('/getpost', async (req, res) => {
 
     let arrayPosts;
@@ -39,7 +44,7 @@ app.get('/getpost', async (req, res) => {
     res.send(arrayPosts);
 })
 
-app.post('/insert' , async (req, res) => {
+app.post('/insert' , (req, res) => {
     /* await post.create({
         url : 'a',
         iso : '2',
