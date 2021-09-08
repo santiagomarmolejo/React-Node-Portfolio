@@ -3,6 +3,7 @@ import ImageCard from "./ImageCard";
 import style from './MyWork.module.css';
 
 const MyWork = () => {
+
     return (<div>
         <h1 className={style.main_title}>Mi trabajo</h1>
         <div className={style.flex_img}>
