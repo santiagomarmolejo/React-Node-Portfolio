@@ -4,10 +4,15 @@
     overflow: auto;
     justify-content: space-evenly;
     margin: 50px 0 50px 0;
+    flex-wrap: wrap;
 }
 
 .titulo {
     font-size: 60px;
     text-align: center;
     margin-top: 20px;
+}
+
+.mt {
+    padding-top: 50px;
 }

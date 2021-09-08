@@ -25,7 +25,7 @@ const Photos = (props) => {
             <div className = {style.flex_img}>
                 {photos.map(item => {
                     console.log(item.url)
-                    return <ImageCard key={item._id} img={item.url} />
+                    return <ImageCard className = {style.mt} key={item._id} img={item.url} />
                 })}
             </div>
 

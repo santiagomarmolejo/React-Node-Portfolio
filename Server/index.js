@@ -44,20 +44,12 @@ app.get('/getpost', async (req, res) => {
     res.send(arrayPosts);
 })
 
-app.post('/insert' , (req, res) => {
-    /* await post.create({
-        url : 'a',
-        iso : '2',
-        f : '3',
-        shutter_speed : '3',
-        img_name : 'a'
-        
-    });
+app.post('/insert',async (req, res) => {
 
-    req.accepts('json','text')
-    req.read */
+    let data = req.body;
+    await post.create(data);
 
-    console.log(req.body);
+    console.log(req.body.url);
     res.send(req.body);
 })
 
