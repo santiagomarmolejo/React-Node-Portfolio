@@ -10,25 +10,25 @@ const Form = (props) => {
     const [iso, setIso] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-
+        
         const submit = {
             url,
             iso,
-            f,
+            f,  
             shutter_speed,
             img_name
         }
-
+        
         console.log(submit);
-
+        
         fetch('http://localhost:3001/insert', {
-            method: 'POST',
-            headers: { 'Content-Type': "aplication/json" },
+            method: 'post',
+            headers: { 'Content-Type': "application/json" }, 
             body: JSON.stringify(submit)
         }).then(() => console.log('enviado'))
-            .catch((error) => console.log(`Something is wrong: ${error}`))
-
+        .catch((error) => console.log(`Something is wrong: ${error}`));
+        
+        e.preventDefault();
     }
 
 
